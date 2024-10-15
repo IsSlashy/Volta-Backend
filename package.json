@@ -1,0 +1,16 @@
+{
+  "name": "bun-add-express-mongoose-discord.js-jsonwebtoken-bcrypt",
+  "module": "bun add -d typescript @types/express @types/mongoose @types/jsonwebtoken @types/bcrypt",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/mongoose": "^5.11.96",
+    "bun-add-express-mongoose-discord.js-jsonwebtoken-bcrypt": "file:",
+    "mongoose": "^8.7.1"
+  }
+}
