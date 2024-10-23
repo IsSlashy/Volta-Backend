@@ -6,13 +6,9 @@ const server: Serve = {
   port: config.port, // Changé de PORT à port
   fetch(req: Request) {
     const url = new URL(req.url);
-    
     if (url.pathname === "/") {
       return new Response("Welcome to Fortnite Backend!");
     }
-    
-    // Ajouter d'autres routes ici
-    
     return new Response("Not Found", { status: 404 });
   },
 };

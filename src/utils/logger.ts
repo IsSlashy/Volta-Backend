@@ -1,13 +1,11 @@
-export const logger = {
-    info: (message: string) => {
-      console.log(`[INFO] ${message}`);
-    },
-    error: (message: string, error?: any) => {
-      console.error(`[ERROR] ${message}`, error);
-    },
-    debug: (message: string) => {
+export const log = {
+  info: (message: string) => console.log(`[INFO] ${message}`),
+  error: (message: string) => console.error(`[ERROR] ${message}`),
+  debug: (message: string) => {
       if (process.env.NODE_ENV !== 'production') {
-        console.log(`[DEBUG] ${message}`);
+          console.debug(`[DEBUG] ${message}`);
       }
-    }
-  };
+  },
+  backend: (message: string) => console.log(`[BACKEND] ${message}`),
+  xmpp: (message: string) => console.log(`[XMPP] ${message}`),
+};
