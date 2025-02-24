@@ -1,6 +1,7 @@
 import { config as dotenvConfig } from 'dotenv';
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 dotenvConfig();
 
@@ -82,7 +83,7 @@ const defaultConfig: Config = {
   moderators: [],
   discord: {
     bUseDiscordBot: false,
-    bot_token: 'MTI1MjM3Mjk4NDI3NDg4MjYzMg.GKGRWB.5Ib6u8wTREYuDgbI-M7SpvRH9UD2iVpcG3o8_E',
+    bot_token: '',
   },
   mongodb: {
     database: 'mongodb://127.0.0.1/Volta',
@@ -139,9 +140,8 @@ const defaultConfig: Config = {
     cubeLakeDate: '2020-01-01T00:00:00.000Z',
   },
 };
-
 function loadConfig(): Config {
-  const configPath = path.join(__dirname, '../../Config/config.json');
+  const configPath = path.join(path.dirname(fileURLToPath(import.meta.url)), '../../Config/config.json');
   let loadedConfig: Partial<Config> = {};
 
   if (fs.existsSync(configPath)) {
